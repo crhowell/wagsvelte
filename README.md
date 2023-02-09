@@ -36,5 +36,5 @@ docker compose logs
 ### Notes
 - Nginx is reachable on port 80, will serve Svelte static files out on `http://localhost/`
 - Wagtail/Django is meant to act as an API/Headless CMS and reachable `http://localhost/api/` but you can reach the CMS admin at `http://localhost/backend/admin`. This is being proxy passed by nginx.
-- Wagtail/Django dev server is directly reachable `http://localhost:8000/api` and ``http://localhost:8000/backend/admin` - hot reload is enabled.
+- Wagtail/Django dev server is directly reachable `http://localhost:8000/api` and `http://localhost:8000/backend/admin` - hot reload is enabled.
 - Svelte (vite dev server) is directly reachable at `http://localhost:3000/` - hot reload is enabled.
