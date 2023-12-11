@@ -1,5 +1,5 @@
 # pull official base image
-FROM python:3.10-slim-buster
+FROM python:3.11-slim-bullseye
 
 # set work directory
 WORKDIR /srv/app
@@ -11,16 +11,20 @@ ENV PYTHONUNBUFFERED 1
 # install dependencies
 RUN pip install --upgrade pip
 COPY ./backend/requirements.txt .
+
 RUN apt-get update && apt-get install --no-install-recommends -y \
-  gcc \
-  libjpeg62-turbo-dev \
-  libpq-dev \
-  libwebp-dev \
-  netcat \
-  postgresql-client \
-  zlib1g-dev \
-  && pip install -r requirements.txt --no-cache-dir \
-  && apt-get autoremove -y gcc
+    gcc \
+    netcat \
+    build-essential \
+    libjpeg62-turbo-dev \
+    libpq-dev \
+    libwebp-dev \
+    zlib1g-dev \
+    libmariadb-dev \
+    postgresql-client \
+  && apt-get clean \
+  && rm -rf /var/lib/apt/lists/* \
+  && pip install -r requirements.txt --no-cache-dir
 
 # copy entrypoint file
 COPY ./docker/backend/entrypoint.sh /srv/
