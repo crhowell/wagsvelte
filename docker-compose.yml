@@ -1,4 +1,4 @@
-version: "3.9"
+version: "3.8"
 
 services:
   backend:
@@ -48,11 +48,13 @@ services:
       - ./docker/frontend/.env
     volumes:
       - ./frontend/:/srv/app
+      - node_modules:/srv/app/node_modules
       - public_html:/var/www/html
     depends_on:
       - backend
       - db
 
 volumes:
+  node_modules:
   postgres_data:
   public_html:
