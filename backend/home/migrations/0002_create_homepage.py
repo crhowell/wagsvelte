@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 from django.db import migrations
 
 
@@ -48,7 +47,6 @@ def remove_homepage(apps, schema_editor):
 
 
 class Migration(migrations.Migration):
-
     run_before = [
         ("wagtailcore", "0053_locale_model"),
     ]

@@ -1,5 +1,5 @@
-# pull official base image
-FROM node:19-alpine
+# pull official latest lts base image
+FROM node:lts-slim
 
 # look for node_modules 1 folder above where app is mounted
 # https://burnedikt.com/dockerized-node-development-and-mounting-node-volumes/

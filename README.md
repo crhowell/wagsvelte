@@ -2,17 +2,19 @@
 Wagtail/Django/Gunicorn + Svelte + Nginx environment running with Docker Compose
 
 ## Container Images
-- python:3.10-slim-buster
+- python:3.11-slim-buster
 - nginx:stable-alpine
-- postgres:14-alpine
-- node:19-alpine
+- postgres:16.1-alpine
+- node:lts-slim  (latest)
 
 ## Main Dependency Versions
-- Django 4.x
-- Wagtail 3.x
-- Gunicorn 20.x
-- Svelte 3.x
-- Vite 4.x
+- Django 5.x
+- Wagtail 5.x
+- Gunicorn 21.x
+- Black 23.x
+- Flake8 6.x
+- Svelte 4.x
+- Vite 5.x
 
 ## Instructions to run
 Docker/Docker compose is required. The containers take ~10s to ~20s to come up.
